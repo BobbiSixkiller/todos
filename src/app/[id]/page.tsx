@@ -20,7 +20,7 @@ export default function TodoListPage({
           <div className="mx-auto lg:mx-0 flex flex-col sm:flex-row justify-between w-full">
             <ListInfo id={id} />
             <div className="mt-3 sm:mt-0">
-              <Link href={"/"}>
+              <Link href={"./"}>
                 <Button className="mr-2">
                   <ChevronLeftIcon className="h-6 w-6" />
                   Spat

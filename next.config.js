@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {"output": "export"}
 
-module.exports = nextConfig
+let envImageUnoptimize = process.env.NODE_ENV !== "production" ? false : true
+
+const nextConfig = {
+  output:  process.env.NODE_ENV !== "production" ? undefined: "export",
+  images: {
+    unoptimized: envImageUnoptimize,
+  },
+};
+
+module.exports = nextConfig;
+
+

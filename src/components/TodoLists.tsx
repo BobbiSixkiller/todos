@@ -24,7 +24,7 @@ export default function TodoLists() {
   return (
     <div className="mx-auto grid w-full grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {data?.map((list: TodoList) => (
-        <Link key={list.id} href={`/${list.id}`}>
+        <Link key={list.id} href={`./${list.id}`}>
           <Card>
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">
               {list.name}
