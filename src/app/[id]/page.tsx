@@ -7,6 +7,7 @@ import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 import ListInfo from "@/components/ListInfo";
 import { TodosProvider } from "../providers/TodosProvider";
 import Filter from "@/components/Filter";
+import { TodoList } from "@/utils/types";
 
 export default function TodoListPage({
   params: { id },
@@ -36,4 +37,14 @@ export default function TodoListPage({
       </div>
     </TodosProvider>
   );
+}
+
+export async function generateStaticParams() {
+  const lists = await fetch(
+    "https://651d05dc44e393af2d590607.mockapi.io/lists"
+  ).then((res) => res.json());
+
+  return lists.map((list: TodoList) => ({
+    id: list.id.toString(),
+  }));
 }
