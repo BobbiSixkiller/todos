@@ -41,7 +41,8 @@ export default function TodoListPage({
 
 export async function generateStaticParams() {
   const lists = await fetch(
-    "https://651d05dc44e393af2d590607.mockapi.io/lists"
+    "https://651d05dc44e393af2d590607.mockapi.io/lists",
+    { next: { revalidate: 60 } }
   ).then((res) => res.json());
 
   return lists.map((list: TodoList) => ({
